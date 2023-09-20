@@ -1,0 +1,13 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    ActionOverride("RJinii1",MoveBetweenAreasEffect("RJP204","SPDIMNDR",[1439.865],2))
+    ActionOverride("RJIRENI",MoveBetweenAreasEffect("RJP204","SPDIMNDR",[1325.785],0))
+    Wait(5)
+    DisplayStringHead(Player1,@204)
+    Wait(3)
+    EndCutSceneMode()
+END

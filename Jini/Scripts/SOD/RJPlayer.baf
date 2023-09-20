@@ -1,0 +1,394 @@
+
+// This is CHARNAME's SoD script. Each block does one unique action.
+
+// Reselecting InParty NPCs
+
+IF
+  G("RJiniTalk",0)
+  G("RJSelect",1)
+THEN
+  RESPONSE #100
+    SetGlobal("RJSelect","GLOBAL",0)
+    ActionOverride(Player2,MakeUnselectable(0))
+    ActionOverride(Player3,MakeUnselectable(0))
+    ActionOverride(Player4,MakeUnselectable(0))
+    ActionOverride(Player5,MakeUnselectable(0))
+    ActionOverride(Player6,MakeUnselectable(0))
+END
+
+// Adjusting Jini SoD Talks
+
+IF
+  GLT("RJiniTalks",25)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniTalks","GLOBAL",25)
+    Continue()
+END
+
+IF
+  G("RJGRSLP",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJGRSLP","GLOBAL",99)
+    Continue()
+END
+
+// Rubbing the lamp
+
+// Lamp doesn't work at end of SoD
+
+IF
+  G("RJRUB",1)
+  OR(3)
+    AreaCheck("BD6000")
+    AreaCheck("BD6100")
+    AreaCheck("BD6200")
+THEN
+  RESPONSE #100
+    DisplayStringHead(Player1,@405)
+    SetGlobal("RJRUB","GLOBAL",0)
+END
+
+// Already inside the lamp
+
+IF
+  G("RJRUB",1)
+  OR(3)
+    AreaCheck("RJB604")
+    AreaCheck("RJB605")
+    AreaCheck("RJB606")
+THEN
+  RESPONSE #100
+    DisplayStringHead(Player1,@400)
+    SetGlobal("RJRUB","GLOBAL",0)
+END
+
+// Already in progress
+
+IF
+  G("RJRUB",1)
+  OR(4)
+    !G("RJLamp",0)
+    !G("RJiniFlirt",0)
+    !G("RJiniTalk",0)
+    StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    DisplayStringHead(Player1,@401)
+    SetGlobal("RJRUB","GLOBAL",0)
+END
+
+// Get Jini outside the lamp
+
+IF
+  G("RJRUB",1)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  !G("RJiniRomanceActive",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #80
+    SetGlobal("RJRUB","GLOBAL",2)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END
+
+IF
+  G("RJRUB",1)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  G("RJiniRomanceActive",2)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #80
+    SetGlobal("RJRUB","GLOBAL",2)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+  RESPONSE #20
+    SetGlobal("RJRUB","GLOBAL",2)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJLamp","GLOBAL",9)
+    SmallWait(20)
+    StartDialogue("BDPLAYER",Player1)
+END
+
+// Initiate Self Talks
+
+IF
+  G("RJShadow",1)
+THEN
+  RESPONSE #100
+    StartDialogue("BDPLAYER",Player1)
+END
+
+//  Another Party Member has the Lamp
+
+IF
+OR(5)
+  HasItem("RJ1LAMP",player2)
+  HasItem("RJ1LAMP",player3)
+  HasItem("RJ1LAMP",player4)
+  HasItem("RJ1LAMP",player5)
+  HasItem("RJ1LAMP",player6)
+THEN
+  RESPONSE #100
+    TakePartyItem("RJ1LAMP")
+    DisplayStringHead(Player1,@15)
+    Wait(3)
+END
+
+// Rescue from gender change
+
+IF
+  HasItem("RJ1LAMP",player1)
+  !Gender(Player1,MALE)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  !AreaCheck("RJB604")
+  !AreaCheck("RJB605")
+  !AreaCheck("RJB606")
+  !AreaCheck("BD6000")
+  !AreaCheck("BD6100")
+  !AreaCheck("BD6200")
+  G("RJGender",0)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJGender","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END
+
+// This is where Jini's love talks start.
+
+IF
+  HasItem("RJ1LAMP",player1)
+  G("RJiniTalksSoD",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniTalksSoD","GLOBAL",1)
+    RealSetGlobalTimer("RJiniRomance","GLOBAL",RJ_TALK)
+END
+
+IF
+  HasItem("RJ1LAMP",player1)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  AreaType(OUTDOOR)
+  !AreaCheck("BD0071")
+  OR(2)
+    G("RJiniTalks",27)
+    G("RJiniTalks",31)
+  RealGlobalTimerExpired("RJiniRomance","GLOBAL")
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJiniTalks","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END
+
+IF
+  HasItem("RJ1LAMP",player1)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  AreaType(OUTDOOR)
+  !AreaCheck("BD0071")
+  GGT("RJFaySpawn",1)
+  G("RJiniTalks",33)
+  RealGlobalTimerExpired("RJiniRomance","GLOBAL")
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    IncrementGlobal("RJiniTalks","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END
+
+// Drop In Talks
+
+IF
+  HasItem("RJ1LAMP",player1)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  AreaType(OUTDOOR)
+  !AreaCheck("BD0071")
+  OR(3)
+    G("RJiniTalks",25)
+    G("RJiniTalks",29)
+    G("RJiniTalks",35)
+  RealGlobalTimerExpired("RJiniRomance","GLOBAL")
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    IncrementGlobal("RJiniTalks","GLOBAL",1)
+END
+
+IF
+  G("RJiniTalk",1)
+  OR(3)
+    G("RJiniTalks",26)
+    G("RJiniTalks",30)
+    G("RJiniTalks",36)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    DisplayStringHead(Player1,@16)
+    Wait(3)
+    StartCutScene("RJDRP604")
+END
+
+// Rjali spotted outside the Ducal Palace in SoD
+
+IF
+  G("RJShadow",0)
+  AreaCheck("BD0010")
+  Global("RJALI","BD0010",0)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    SetGlobal("RJALI","BD0010",1)
+    StartCutScene("RJSHADOW")
+END
+
+// Jini pops out to say Hey! to Nazramu
+
+IF
+  AreaCheck("BD3000")
+  G("RJBDNaz",0)
+  Range("BDNAZRAM",10)
+  !Global("BD_nazramu_map_note","bd3000",0)
+  PartyHasItem("RJ1LAMP")
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJBDNaz","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END
+
+// Jini pops out to forshadow the end
+
+IF
+  AreaCheck("BD6000")
+  G("RJBDExt9",0)
+  PartyHasItem("RJ1LAMP")
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJBDExt9","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END
+
+// Jini is romanceable, and she is going to initiate flirts!
+
+IF
+  HasItem("RJ1LAMP",player1)
+  G("RJiniFlirtStart",0)
+  G("RJiniRomanceActive",2)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniFlirtStart","GLOBAL",1)
+    RealSetGlobalTimer("RJiniFlirtTimer","GLOBAL",RJ_FLIRT)
+END
+
+IF
+  HasItem("RJ1LAMP",player1)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",0)
+  !AreaCheck("RJB604")
+  !AreaCheck("RJB605")
+  !AreaCheck("RJB606")
+  !AreaCheck("BD0071")
+  !AreaCheck("BD6000")
+  !AreaCheck("BD6100")
+  !AreaCheck("BD6200")
+  RealGlobalTimerExpired("RJiniFlirtTimer","GLOBAL")
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  CombatCounter(0)
+  !See([ENEMY])
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniFlirt","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END

@@ -1,0 +1,7 @@
+
+COPY ~Jini/bam~ ~override~
+
+COPY_EXISTING ~2000.ini~ ~override~
+  REPLACE_TEXTUALLY ~selection=ogrem03~ ~selection=~
+
+INCLUDE ~Jini/tph/RJAnimation.tph~

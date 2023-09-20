@@ -1,0 +1,35 @@
+
+// Rub the Lamp
+
+IF
+  G("RJRUB",2)
+  G("RJLamp",0)
+  G("RJiniFlirt",0)
+  G("RJiniTalk",1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    SetGlobal("RJRUB","GLOBAL",0)
+    SetGlobal("RJLamp","GLOBAL",1)
+    SmallWait(20)
+    StartDialogueNoSet(Player1)
+END
+
+// Jini initiated flirts
+
+IF
+  G("RJiniFlirt",1)
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("RJiniFlirtTimer","GLOBAL",RJ_FLIRT)
+    StartDialogueNoSet(Player1)
+END
+
+// Jini initiated talks
+
+IF
+  G("RJiniTalk",1)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END

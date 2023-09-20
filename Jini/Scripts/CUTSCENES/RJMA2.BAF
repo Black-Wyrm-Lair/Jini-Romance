@@ -1,0 +1,12 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    ActionOverride("RJ1INV",DestroySelf())
+    CreateCreatureDoor("RJMARIL",[851.436],3)
+    Wait(5)
+    StartDialogue("RJPLAYER",Player1)
+    EndCutSceneMode()
+END

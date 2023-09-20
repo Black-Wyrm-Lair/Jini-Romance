@@ -1,0 +1,32 @@
+
+// Get Free Animation ID
+
+ACTION_IF 1 BEGIN
+  LAF FIND_FREE_ANIM_SLOT
+    RET index
+  END
+END
+
+ACTION_IF index > 0 BEGIN
+  OUTER_SET new_anim_id = index
+  OUTER_PATCH ~~ BEGIN
+    SPRINTF new_anim_code ~%x~ (new_anim_id)
+    INNER_PATCH_SAVE new_anim_code ~%new_anim_code%~ BEGIN DELETE_BYTES 0 2 END
+    TO_UPPER "new_anim_code"
+  END
+
+// Create new xxxx.ini and register it in animate.ids
+
+  COPY ~%MOD_FOLDER%/ini/%rjfile%.ini~ ~override/%new_anim_code%.ini~
+    SET found = 0
+    REPLACE_TEXTUALLY ~^//.*~ ~// 0x%new_anim_code% %rjtitle%~
+   BUT_ONLY
+
+  APPEND ~ANIMATE.IDS~ ~0x%new_anim_code% %rjtitle%~
+
+// Update creatures's animation id
+
+  COPY_EXISTING ~%rjfile%.CRE~ ~override~
+    WRITE_LONG 0x28 new_anim_id
+   BUT_ONLY
+END

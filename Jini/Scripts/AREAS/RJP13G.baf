@@ -1,0 +1,23 @@
+
+// Init RJP13G - Modron Maze
+
+IF
+  OR(4)
+    G("RJiniRescue",2)
+    G("RJiniRescue",5)
+    G("RJiniRescue",8)
+    G("RJiniRescue",11)
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    TriggerActivation("Exit1",TRUE)
+    TriggerActivation("Exit2",TRUE)
+    TriggerActivation("Exit3",TRUE)
+    TriggerActivation("Exit4",TRUE)
+    TriggerActivation("Exit1a",FALSE)
+    TriggerActivation("Exit2a",FALSE)
+    TriggerActivation("Exit3a",FALSE)
+    TriggerActivation("Exit4a",FALSE)
+    IncrementGlobal("RJiniRescue","GLOBAL",1)
+END

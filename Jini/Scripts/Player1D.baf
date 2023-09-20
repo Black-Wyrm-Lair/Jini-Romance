@@ -1,0 +1,61 @@
+
+// Begin Dream Doors
+
+IF
+  G("RJiniRescue",1)
+  G("RJiniTalk",0)
+  G("RJiniSleep",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJiniSleep","GLOBAL",2)
+    SetGlobal("RJiniTalk","GLOBAL",2)
+    SetGlobal("RJiniRescue","GLOBAL",2)
+    Wait(1)
+    StartCutSceneMode()
+    StartCutScene("RJRESCUE")
+END
+
+// Group enters Jini's lamp on sleep
+
+IF
+  G("RJGRSLP",0)
+  G("RJiniTalk",0)
+  G("RJiniSleep",0)
+  G("RJJIRVL",99)
+  NumInPartyAliveGT(1)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    SetGlobal("RJiniSleep","GLOBAL",2)
+    SetGlobal("RJiniTalk","GLOBAL",2)
+    SetGlobal("RJGRSLP","GLOBAL",1)
+    Wait(1)
+    StartCutScene("RJCUT605")
+END
+
+// Entering Jini's lamp on sleep
+
+IF
+  G("RJiniTalk",0)
+  G("RJiniSleep",0)
+  G("RJiniPermit",1)
+  RealGlobalTimerExpired("RJSleepTimer","GLOBAL")
+THEN
+  RESPONSE #50
+    StartCutSceneMode()
+    SetGlobal("RJiniSleep","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",2)
+    DisplayStringHead(Player1,@210)
+    Wait(3)
+    StartCutScene("RJCUN604")
+  RESPONSE #50
+    SetGlobal("RJiniSleep","GLOBAL",1)
+    SetGlobal("RJiniTalk","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    CreateCreature("RJinii1",[-1.-1],0)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+END

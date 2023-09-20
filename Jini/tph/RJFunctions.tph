@@ -1,0 +1,22 @@
+
+// This action function attempts to find and return the first unoccupied creature animation slot 
+// in the given range. Returns -1 if no slot was found.
+
+DEFINE_ACTION_FUNCTION FIND_FREE_ANIM_SLOT
+INT_VAR
+  start_index = rjaniml              // Lower bounds
+  end_index   = rjanimu              // Upper bounds
+RET index                            // Returned slot index (or -1 if none found)
+BEGIN
+  OUTER_SET index = "-1"
+  OUTER_PATCH ~~ BEGIN
+    FOR (slot = start_index; slot <= end_index; ++slot) BEGIN
+      SPRINTF hexValue ~%x~ (slot)
+      INNER_PATCH_SAVE hexValue ~%hexValue%~ BEGIN DELETE_BYTES 0 2 END
+      PATCH_IF NOT FILE_EXISTS_IN_GAME ~%hexValue%.ini~ BEGIN
+        SET index = slot
+        SET slot = end_index + 1
+      END
+    END
+  END
+END

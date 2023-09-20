@@ -1,0 +1,36 @@
+
+// Main dialogs and scripts
+
+ADD_JOURNAL @6000 @6001 @6002 @6003 @6004 @6005 @6006
+
+COMPILE EVALUATE_BUFFER
+        ~Jini/Dialogue/RJini1.d~    // Jini's in person dialogue
+	~Jini/Dialogue/RJinii1.d~   // Jini's voice dialogue file
+	~Jini/Dialogue/RJPlayer.d~  // CHARNAME's dialogue file
+	~Jini/Dialogue/RJ1DOOFS.d~  // Doofus' dialogue
+	~Jini/Dialogue/RJMARIL.d~   // Maril's dialogue
+	~Jini/Dialogue/RJ1RAVEL.d~  // Ravel's dialogue
+	~Jini/Dialogue/RJ1TRIAS.d~  // Trias' dialogue
+	~Jini/Dialogue/RJ1GOSS.d~   // Goss' dialogue
+	~Jini/Dialogue/RJIRENI.d~   // Irenicus' dialogue file
+	~Jini/Dialogue/RJFAY1.d~    // Fay's dialogue file
+	~Jini/Dialogue/RJBFAY1.d~   // Fay's banter file
+
+COMPILE EVALUATE_BUFFER
+        ~Jini/Scripts/RJini1.baf~   // Jini's main script file
+        ~Jini/Scripts/RJinii1.baf~  // Jinii's main script file
+        ~Jini/Scripts/CUTSCENES~    // Cutscenes
+        ~Jini/Scripts/RJPlayer.baf~ // Player1 script file
+        ~Jini/Scripts/RJ1INV.baf~   // Invisible script file
+        ~Jini/Scripts/RJFAY1.baf~   // Fay's main script file
+
+EXTEND_BOTTOM ~Player1D.bcs~ ~Jini/Scripts/Player1D.baf~ EVALUATE_BUFFER
+
+// Sirene
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene/Setup-Sirene.tp2~ "0" THEN BEGIN
+  COPY_EXISTING ~c0sirene.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~HPPercentLT(Myself,75)~ ~True()~
+    END
+END

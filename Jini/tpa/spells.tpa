@@ -1,0 +1,10 @@
+
+// Spells
+
+COPY ~Jini\Spells\Copy~ ~override~
+
+COPY ~Jini\Spells\RJPR607.spl~ ~override\RJPR607.spl~
+SAY NAME1 @102
+SAY NAME2 @102
+SAY UNIDENTIFIED_DESC @103
+SAY DESC @103

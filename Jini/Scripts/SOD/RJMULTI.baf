@@ -1,0 +1,64 @@
+
+// Multiple Jail Visitors
+
+IF
+  Global("chapter","global",13)
+  Global("RJNeeraVisit","bd0104",0)
+  GlobalTimerExpired("bd_jail_visitors_timer","bd0104")
+  Global("bd_jail_visitors","bd0104",4)
+  Global("bd_neera_romanceactive","global",2)
+  !Dead("NEERA")  // Neera
+THEN
+  RESPONSE #100
+    SetGlobal("RJNeeraVisit","bd0104",1)
+    SetGlobal("bd_jail_visitors","bd0104",5)
+    SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)
+    MoveGlobal("bd0104","NEERA",[720.620])  // Neera
+    ActionOverride("NEERA",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+  Global("chapter","global",13)
+  Global("RJSafanaVisit","bd0104",0)
+  GlobalTimerExpired("bd_jail_visitors_timer","bd0104")
+  Global("bd_jail_visitors","bd0104",4)
+  Global("bd_safana_romanceactive","global",2)
+  !Dead("SAFANA")  // Safana
+THEN
+  RESPONSE #100
+    SetGlobal("RJSafanaVisit","bd0104",1)
+    SetGlobal("bd_jail_visitors","bd0104",5)
+    SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)
+    MoveGlobal("bd0104","SAFANA",[720.620])  // Safana
+    ActionOverride("SAFANA",ChangeAIScript("bdvisit",OVERRIDE))
+    ActionOverride("SAFANA",SetDialog("bdsafana"))
+END
+
+IF
+  Global("chapter","global",13)
+  Global("RJViconiaVisit","bd0104",0)
+  GlobalTimerExpired("bd_jail_visitors_timer","bd0104")
+  Global("bd_jail_visitors","bd0104",4)
+  Global("bd_viconia_romanceactive","global",2)
+  !Dead("VICONIA")  // Viconia
+THEN
+  RESPONSE #100
+    SetGlobal("RJViconiaVisit","bd0104",1)
+    SetGlobal("bd_jail_visitors","bd0104",5)
+    SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)
+    MoveGlobal("bd0104","VICONIA",[720.620])  // Viconia
+    ActionOverride("VICONIA",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+  Global("chapter","global",13)
+  GlobalTimerExpired("bd_jail_visitors_timer","bd0104")
+  Global("bd_jail_visitors","bd0104",4)
+  OR(2)
+    !Global("C02SireneRomanceActive","GLOBAL",2)
+    Dead("C0Sirene")  // Sirene
+THEN
+  RESPONSE #100
+    SetGlobal("bd_jail_visitors","bd0104",6)
+    SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)
+END

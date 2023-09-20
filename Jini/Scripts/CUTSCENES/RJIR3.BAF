@@ -1,0 +1,15 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    CreateVisualEffectObject("SPDIMNDR","RJIRENI")
+    Wait(2)
+    ActionOverride("RJIRENI",DestroySelf())
+    ActionOverride("RJinii1",FaceObject(Player1))
+    FaceObject("RJinii1")
+    Wait(3)
+    StartDialogue("RJPLAYER",Player1)
+    EndCutSceneMode()
+END

@@ -1,0 +1,22 @@
+
+// Init RJB606 - Jini's Lamp Backroom
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    Continue()
+END
+
+IF
+  G("RJFaySpawn",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJB606","GLOBAL",1)
+    SetGlobal("RJFaySpawn","GLOBAL",1)
+    CreateCreature("RJFAY1",[349.260],4)
+    ActionOverride("RJFAY1",MakeGlobal())
+    ActionOverride("RJFAY1",FaceObject(Player1))
+END

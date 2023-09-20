@@ -1,0 +1,28 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    StorePartyLocations()
+    SetGlobal("RJFayBig","GLOBAL",2)
+    SetGlobal("RJPort","GLOBAL",1)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+    LeaveAreaLUA("RJB606","",[498.273],0)
+    Wait(3)
+    ActionOverride("RJFAY1",Polymorph(SIRINE))
+    FaceObject("RJFAY1")
+    ActionOverride("RJFAY1",FaceObject(Player1))
+    FadeFromColor([20.0],0)
+    Wait(1)
+    EndCutSceneMode()
+    ActionOverride("RJFAY1",StartDialogueNoSet(Player1))
+END

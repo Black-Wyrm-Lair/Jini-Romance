@@ -1,0 +1,130 @@
+
+BACKUP ~Jini/Backup~
+
+AUTHOR ~nullset@sympatico.ca~ 
+
+// Here's where we make NPC dialogues to do CHAIN dialogue for non-existent NPC !InParty
+
+ALLOW_MISSING ~RJPLAYER.dlg~
+              ~RJALI1.dlg~
+              ~RJALIY.dlg~
+              ~RJGREG.dlg~
+              ~BDPLAYER.dlg~
+              ~C0SIRENJ.dlg~
+              ~C02SIREJ.dlg~
+              ~BC0SIREN.dlg~
+              ~RH#ISRAJ.dlg~
+
+ALWAYS
+
+ACTION_IF (GAME_IS ~eet~) BEGIN
+  OUTER_TEXT_SPRINT rj_area ~BG~
+  OUTER_TEXT_SPRINT rj_imoen ~IMOEN2~
+  OUTER_TEXT_SPRINT rj_eet_suff ~_~
+END ELSE BEGIN //any other platform
+  OUTER_TEXT_SPRINT rj_area ~AR~
+  OUTER_TEXT_SPRINT rj_imoen ~IMOEN~
+  OUTER_TEXT_SPRINT rj_eet_suff ~~
+END
+
+END
+
+VERSION ~v3.2~
+
+README ~Jini/Readme-Jini.txt~
+
+AUTO_TRA ~Jini/Languages/%s~
+LANGUAGE ~English~ ~English~ ~Jini/Languages/English/setup.tra~
+LANGUAGE ~Russian (by Jericho2)~ ~Russian~ ~Jini/Languages/Russian/setup.tra~
+
+// This is the main event
+
+BEGIN @0
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ @6
+
+// Set mod defaults
+
+INCLUDE ~Jini/tpa/default.tpa~
+
+// Jini's sound sets
+
+LAF HANDLE_AUDIO END
+
+// Jini's portraits
+
+INCLUDE ~Jini/tpa/portraits.tpa~
+
+// Areas
+
+INCLUDE ~Jini/tpa/areas.tpa~
+
+// Area music
+
+INCLUDE ~Jini/tpa/music.tpa~
+
+// Here's where we put creatures
+
+INCLUDE ~Jini/tpa/creatures.tpa~
+
+// Set mod animations
+
+INCLUDE ~Jini/tpa/animations.tpa~
+
+// Here's where we put items
+
+INCLUDE ~Jini/tpa/items.tpa~
+
+// Here's where we put spells
+
+INCLUDE ~Jini/tpa/spells.tpa~
+
+// These are the main dialogues and scripts
+
+INCLUDE ~Jini/tpa/main.tpa~
+
+// These are the SoD dialogues and scripts
+
+INCLUDE ~Jini/tpa/sod.tpa~
+
+// These are the multiple romance patches
+
+INCLUDE ~Jini/tpa/multi.tpa~
+
+// Here's where we generate the new Imoen (multiclass)
+
+BEGIN @7
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ @6
+
+COPY ~Jini/Creatures/Imoen/imoen.cre~ ~override~
+	PATCH_IF GAME_IS ~eet~ BEGIN
+		WRITE_ASCII 0x248 ~IMOEN_~ (8)
+		WRITE_ASCII 0x250 ~INITDLG~ (8)
+		WRITE_ASCII 0x258 ~~ (8)
+		WRITE_ASCII 0x260 ~WTRUNSGT~ (8)
+		WRITE_ASCII 0x268 ~WTARSGT~ (8)
+		WRITE_ASCII 0x280 ~IMOEN2~ (32)
+	END
+
+COPY ~Jini/Creatures/Imoen/imoen1.cre~ ~override~
+     ~Jini/Creatures/Imoen/imoen2.cre~ ~override~
+	PATCH_IF GAME_IS ~eet~ BEGIN
+		WRITE_ASCII 0x248 ~IMOEN_~ (8)
+		WRITE_ASCII 0x250 ~INITDLG~ (8)
+		WRITE_ASCII 0x258 ~~ (8)
+		WRITE_ASCII 0x260 ~WTRUNSGT~ (8)
+		WRITE_ASCII 0x268 ~WTARSGT~ (8)
+		WRITE_ASCII 0x280 ~IMOEN2~ (32)
+		WRITE_ASCII 0x2cc ~IMOEN2_~ (8)
+	END
+
+COPY ~Jini/Creatures/Imoen/imoen4.cre~ ~override~
+     ~Jini/Creatures/Imoen/imoen6.cre~ ~override/imoen6%rj_eet_suff%.cre~
+	PATCH_IF GAME_IS ~eet~ BEGIN
+		WRITE_ASCII 0x248 ~IMOEN_~ (8)
+		WRITE_ASCII 0x250 ~INITDLG~ (8)
+		WRITE_ASCII 0x258 ~~ (8)
+		WRITE_ASCII 0x260 ~~ (8)
+		WRITE_ASCII 0x268 ~WTARSGT~ (8)
+		WRITE_ASCII 0x280 ~IMOEN2~ (32)
+		WRITE_ASCII 0x2cc ~IMOEN2_~ (8)
+	END

@@ -1,0 +1,10 @@
+
+// Init RJP610 - Ravel's Maze
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+END

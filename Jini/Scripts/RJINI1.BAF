@@ -1,0 +1,15 @@
+
+// Jini notices Fay with the PC
+
+IF
+  G("RJIFA",0)
+  Range("RJFAY1",15)
+  G("RJFaySpawn",3)
+  !G("RJiniTalk",99)
+THEN
+  RESPONSE #40
+    SetGlobal("RJIFA","GLOBAL",3)
+  RESPONSE #60
+    SetGlobal("RJIFA","GLOBAL",1)
+    StartDialogueNoSet(Player1)
+END

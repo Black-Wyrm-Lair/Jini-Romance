@@ -1,0 +1,24 @@
+
+// Maril Trigger
+
+IF
+  AreaCheck("RJP705")
+  See(Player1)
+  G("RJINV705",0)
+  PartyHasItem("RJSCRLM")
+THEN
+  RESPONSE #100
+    SetGlobal("RJINV705","GLOBAL",1)
+END
+
+// Ireni Trigger
+
+IF
+  AreaCheck("RJP204")
+  Range(Player1,15)
+  G("RJINV204",0)
+  G("RJiniRescue",99)
+THEN
+  RESPONSE #100
+    SetGlobal("RJINV204","GLOBAL",1)
+END

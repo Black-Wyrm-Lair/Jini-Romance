@@ -1,0 +1,19 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    IncrementGlobal("RJShadowCnt","GLOBAL",1)
+    CreateCreature("Rjali1",[-1.-1],0)
+    SmallWait(1)
+    DisplayStringHead("Rjali1",@201)
+    ActionOverride("Rjali1",TakePartyGold(10))
+    Wait(3)
+    ActionOverride("Rjali1",EscapeAreaDestroy(10))
+    Wait(2)
+    DisplayStringHead(Player1,@202)
+    Wait(3)
+    SetGlobal("RJShadow","GLOBAL",1)
+    EndCutSceneMode()
+END

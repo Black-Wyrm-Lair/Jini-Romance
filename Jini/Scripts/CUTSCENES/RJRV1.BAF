@@ -1,0 +1,14 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    CreateVisualEffectObject("SPDIMNDR","RJ1RAVEL")
+    Wait(2)
+    ActionOverride("RJ1RAVEL",DestroySelf())
+    Wait(3)
+    DisplayStringHead(Player1,@206)
+    Wait(3)
+    EndCutSceneMode()
+END

@@ -1,0 +1,22 @@
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    StorePartyLocations()
+    SetGlobal("RJPort","GLOBAL",2)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    LeaveAreaLUA("RJB605","",[608.677],SSW)
+    ActionOverride(Player2,LeaveAreaLUA("RJB605","",[640.716],W)
+    ActionOverride(Player3,LeaveAreaLUA("RJB605","",[684.679],SW)
+    ActionOverride(Player4,LeaveAreaLUA("RJB605","",[643.618],NNE)
+    ActionOverride(Player5,LeaveAreaLUA("RJB605","",[588.599],S)
+    ActionOverride(Player6,LeaveAreaLUA("RJB605","",[539.637],SSE)
+    Wait(3)
+    FadeFromColor([20.0],0)
+    Wait(1)
+    EndCutSceneMode()
+    StartDialogue("RJPLAYER",Player1)
+END

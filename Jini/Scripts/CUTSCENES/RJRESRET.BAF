@@ -1,0 +1,23 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneID(Player1)
+    FadeToColor([30.0],0)
+    Wait(1)
+    BanterBlockFlag(FALSE)
+    RestorePartyLocations()
+    Wait(5)
+    FadeFromColor([20.0],0)
+    Wait(3)
+    RealSetGlobalTimer("RJiniRomance","GLOBAL",RJ_TALK)
+    SetGlobal("RJiniSleep","GLOBAL",0)
+    SetGlobal("RJiniTalk","GLOBAL",0)
+    SetGlobal("RJLamp","GLOBAL",0)
+    SetGlobal("RJPort","GLOBAL",0)
+    Wait(1)
+    RestParty()
+    Wait(1)
+    EndCutSceneMode()
+END

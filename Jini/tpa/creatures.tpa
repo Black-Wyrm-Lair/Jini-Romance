@@ -1,0 +1,104 @@
+
+COPY ~Jini/Creatures/RJFAY1.cre~ ~override/RJFAY1.cre~
+SAY NAME1 @15
+SAY NAME2 @15
+SAY SELECT_COMMON1 @730
+SAY SELECT_ACTION1 @731
+SAY BIO @40
+WRITE_ASCII 0x034 ~RJFAY1S~ #8  // small protrait
+WRITE_ASCII 0x2cc ~RJFAY1~  #8  // dialogue file
+WRITE_ASCII 0x248 ~RJFAY1~  #8  // override script
+WRITE_ASCII 0x280 ~RJFAY1~  #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJINI1.cre~ ~override/RJINI1.cre~
+SAY NAME1 @2
+SAY NAME2 @2
+SAY BIO @5
+WRITE_ASCII 0x034 ~RJINI1S~ #8  // small protrait
+WRITE_ASCII 0x2cc ~RJINI1~  #8  // dialogue file
+WRITE_ASCII 0x248 ~RJINI1~  #8  // override script
+WRITE_ASCII 0x280 ~RJini1~  #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJINII1.cre~ ~override/RJINII1.cre~
+SAY NAME1 @2
+SAY NAME2 @2
+SAY BIO @5
+WRITE_ASCII 0x034 ~RJINI1S~ #8  // small protrait
+WRITE_ASCII 0x248 ~RJINII1~ #8  // override script
+WRITE_ASCII 0x2cc ~RJINII1~ #8  // dialogue file
+WRITE_ASCII 0x280 ~RJinii1~ #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJMan.cre~ ~override/RJGreg.cre~
+SAY NAME1 @3
+SAY NAME2 @3
+WRITE_ASCII 0x034 ~RJGREGS~ #8  // small protrait
+WRITE_ASCII 0x248 ~RJGREG~  #8  // override script
+WRITE_ASCII 0x2cc ~RJGREG~  #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJGreg~  #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJIMP.cre~ ~override/RJ1Doofs.cre~
+SAY NAME1 @8
+SAY NAME2 @8
+SAY BIO @41
+WRITE_ASCII 0x034 ~RJ1DOOFS~ #8  // small protrait
+WRITE_ASCII 0x2cc ~RJ1DOOFS~ #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJ1Doofs~ #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJGIRL.cre~ ~override/RJALIY.cre~
+SAY NAME1 @1
+SAY NAME2 @1
+SAY BIO @4
+WRITE_ASCII 0x034 ~RJALI1S~ #8  // small protrait
+WRITE_ASCII 0x248 ~RJALIY~  #8  // override script
+WRITE_ASCII 0x2cc ~RJALIY~  #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RjaliY~  #32 // death variable - character reference
+
+COPY ~Jini/Creatures/Rjali.cre~ ~override/RJALI1.cre~
+SAY NAME1 @1
+SAY NAME2 @1
+SAY BIO @4
+WRITE_ASCII 0x248 ~RJALI1~  #8  // override script
+WRITE_ASCII 0x2cc ~RJALI1~  #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~Rjali1~  #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJIRENI.cre~ ~override/RJIRENI.cre~
+SAY NAME1 @9
+SAY NAME2 @9
+WRITE_ASCII 0x248 ~~        #8  // override script
+WRITE_ASCII 0x2cc ~RJIRENI~ #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJIRENI~ #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJMARIL.cre~ ~override/RJMARIL.cre~
+SAY NAME1 @10
+SAY NAME2 @10
+WRITE_ASCII 0x248 ~~        #8  // override script
+WRITE_ASCII 0x2cc ~RJMARIL~ #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJMARIL~ #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJ1RAVEL.cre~ ~override/RJ1RAVEL.cre~
+SAY NAME1 @11
+SAY NAME2 @11
+WRITE_ASCII 0x248 ~~          #8  // override script
+WRITE_ASCII 0x2cc ~RJ1RAVEL~  #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJ1Ravel~  #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJ1TRIAS.cre~ ~override/RJ1TRIAS.cre~
+SAY NAME1 @12
+SAY NAME2 @12
+WRITE_ASCII 0x248 ~~          #8  // override script
+WRITE_ASCII 0x2cc ~RJ1TRIAS~  #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJ1Trias~  #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJThief.cre~ ~override/RJ1GOSS.cre~
+SAY NAME1 @13
+SAY NAME2 @13
+WRITE_ASCII 0x248 ~~          #8  // override script
+WRITE_ASCII 0x2cc ~RJ1GOSS~   #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJ1Goss~   #32 // death variable - character reference
+
+COPY ~Jini/Creatures/RJInvis.cre~ ~override/RJ1INV.cre~
+SAY NAME1 @14
+SAY NAME2 @14
+WRITE_ASCII 0x248 ~RJ1INV~    #8  // override script
+WRITE_ASCII 0x2cc ~~          #8  // dialogue file where we'll put greeting dialogue.
+WRITE_ASCII 0x280 ~RJ1INV~    #32 // death variable - character reference

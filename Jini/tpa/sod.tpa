@@ -1,0 +1,41 @@
+
+// SoD dialogs and scripts
+
+ACTION_IF FILE_EXISTS_IN_GAME ~BDPLAYER.bcs~ THEN BEGIN
+
+  COMPILE ~Jini/Dialogue/SOD/RJPlayer.d~
+          ~Jini/Dialogue/SOD/RJINI1.d~
+          ~Jini/Dialogue/SOD/RJINII1.d~
+
+  EXTEND_BOTTOM ~BDPLAYER.bcs~ ~Jini/Scripts/SOD/RJPlayer.baf~
+  EXTEND_TOP ~BD0120.bcs~ ~Jini/Scripts/SOD/BD0120.baf~
+
+  COPY_EXISTING ~bdcut11.bcs~ ~override~
+                ~bdcut20a.bcs~ ~override~
+                ~bdcut30a.bcs~ ~override~
+                ~bdcut59.bcs~ ~override~
+                ~bdcut61a.bcs~ ~override~
+                ~bdddd2a.bcs~ ~override~
+                ~bdddd1ac.bcs~ ~override~
+                ~bdddd1c.bcs~ ~override~
+                ~bdddd2b.bcs~ ~override~
+                ~bdddd2c.bcs~ ~override~
+                ~bdddd3c.bcs~ ~override~
+                ~bdddd4c.bcs~ ~override~
+                ~bdscry01.bcs~ ~override~
+                ~bdscry02.bcs~ ~override~
+                ~bdscry03.bcs~ ~override~
+                ~bdscry4a.bcs~ ~override~
+                ~bdscry05.bcs~ ~override~
+                ~bdscry06.bcs~ ~override~
+                ~cutskip.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~ApplySpellRES("bdhide",Player1)~ 
+                        ~ApplySpellRES("bdhide",Player1)
+                         ApplySpellRES("bdhide","RJFay1")~
+      REPLACE_TEXTUALLY ~ApplySpellRES("bdunhide",Player1)~
+                        ~ApplySpellRES("bdunhide",Player1)
+                         ApplySpellRES("bdunhide","RJFay1")~
+    END
+  
+END

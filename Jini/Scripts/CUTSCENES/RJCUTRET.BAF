@@ -1,0 +1,18 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneID(Player1)
+    FadeToColor([30.0],0)
+    Wait(1)
+    BanterBlockFlag(FALSE)
+    SetGlobal("RJiniTalk","GLOBAL",0)
+    SetGlobal("RJLamp","GLOBAL",0)
+    SetGlobal("RJPort","GLOBAL",0)
+    RestorePartyLocations()
+    Wait(5)
+    FadeFromColor([20.0],0)
+    Wait(3)
+    EndCutSceneMode()
+END

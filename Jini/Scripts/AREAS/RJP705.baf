@@ -1,0 +1,11 @@
+
+// Init RJP705 - Carceri Demon Tower Interior (2 levels)
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    CreateCreature("RJ1INV",[786.530],4)
+END

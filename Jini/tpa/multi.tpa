@@ -1,0 +1,205 @@
+
+// Multiple Jail Visitors
+
+  EXTEND_TOP ~bd0104.bcs~ ~Jini/Scripts/SOD/RJMULTI.baf~
+
+  COPY_EXISTING ~BDNEERA.dlg~ ~override~
+                ~BDSAFANA.dlg~ ~override~
+                ~BDVICONI.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~SetGlobal("bd_jail_visitors","bd0104",6)~ 
+                        ~SetGlobal("bd_jail_visitors","bd0104",4)~
+    END
+
+// Here's where we make Viconia multi-romance capable
+
+  COPY_EXISTING ~BDVICONJ.dlg~ ~override~
+                ~VICONJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~bd_viconia_romanceactive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~bd_viconia_romanceactive~
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[03])\)~ ~True()~
+    END
+
+// Here's where we make Corwin multi-romance capable
+
+  COPY_EXISTING ~BDCORWIJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~bd_corwin_romanceactive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~bd_corwin_romanceactive~
+    END
+  COPY_EXISTING ~BDSCHAE2.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~SetGlobal("bd_jail_visitors","bd0104",6)~ 
+                        ~SetGlobal("bd_jail_visitors","bd0104",3)~
+    END
+
+// Here's where we make Safana multi-romance capable
+
+  COPY_EXISTING ~BDSAFANJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~bd_safana_romanceactive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~bd_safana_romanceactive~
+    END
+
+// Here's where we make Branwen multi-romance capable
+
+  COPY_EXISTING ~BRANWJ.dlg~ ~override~
+                ~BRANWEN%rj_eet_suff%.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~P#BranwenRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~P#BranwenRomanceActive~
+      REPLACE_TEXTUALLY ~!Global("X#DynaheirRomanceInactive","GLOBAL",1)~ ~False()~
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[03])\)~ ~True()~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,75)~ ~True()~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,95)~ ~True()~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,99)~ ~True()~
+    END
+
+// Here's where we make Dynaheir multi-romance capable
+
+  COPY_EXISTING ~DYNAHJ.dlg~ ~override~
+                ~DYNAHEIR.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~X#DynaheirRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~X#DynaheirRomanceActive~
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[03])\)~ ~True()~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,95)~ ~True()~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,96)~ ~True()~
+    END
+
+// Here's where we make Sirene multi-romance capable
+
+ACTION_IF MOD_IS_INSTALLED ~Sirene/Setup-Sirene.tp2~ "0" THEN BEGIN
+  COPY_EXISTING ~C02SIREJ.dlg~ ~override~
+                ~C02Siren.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~C02SireneRomanceActive~ ~RJSTUB~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+      REPLACE_TEXTUALLY ~RJSTUB~ ~C02SireneRomanceActive~
+    END
+  COPY_EXISTING ~bd0104.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Dead("C02Sirene")~ ~!Dead("C0Sirene")~
+    END
+END
+
+// Here's where we make Isra multi-romance capable
+
+ACTION_IF MOD_IS_INSTALLED ~Isra/setup-isra.tp2~ "0" OR
+          MOD_IS_INSTALLED ~Isra/isra.tp2~ "0" THEN BEGIN
+
+  COPY_EXISTING ~RH#ISRAJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+      REPLACE_TEXTUALLY ~!GlobalGT("P#CoranLover","GLOBAL",0)~ ~True()~
+      REPLACE_TEXTUALLY ~!Global("P#CoranRomanceInactive","GLOBAL",1)~ ~False()~
+      REPLACE_TEXTUALLY ~GlobalGT("P#CoranLover","GLOBAL",0)~ ~False()~
+      REPLACE_TEXTUALLY ~Global("P#CoranRomanceInactive","GLOBAL",1)~ ~True()~
+    END
+  ACTION_IF MOD_IS_INSTALLED ~RJPostFix/Setup-RJPostFix.tp2~ "0" THEN BEGIN
+    COPY ~override/rh#isra.cre~ ~override/rh#isra.cre~
+      WRITE_ASCII 0x34 ~rh#israS~ #8   // small portrait
+  END
+END
+
+// Here's where we make Sharteel multi-romance capable
+
+  COPY_EXISTING ~SHARTJ.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(Global(".*[rR]omanc[eE][aA]ctive","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[^12])~ ~False()~
+      REPLACE_TEXTUALLY ~!G(".*[rR]omanc[eE][aA]ctive",[12])~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[^12])\)~ ~True()~
+      REPLACE_TEXTUALLY ~\b\(G(".*[rR]omanc[eE][aA]ctive",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~[rR]omance[aA]ctive~ ~RJRomanceStub~
+    END
+  COPY_EXISTING ~SHARTEEL.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,95)~ ~True()~
+      REPLACE_TEXTUALLY ~HPPercentLT(Player1,96)~ ~True()~
+    END
+  COPY_EXISTING ~DELAINY1.dlg~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[12])\)~ ~False()~
+      REPLACE_TEXTUALLY ~\b\(Global("X#SharInterest","GLOBAL",[03])\)~ ~True()~
+      REPLACE_TEXTUALLY ~X#SharInterest~ ~RJRomanceStub~
+    END
+
+
+// Invisible Jini
+
+COPY ~Jini/Creatures/RJINVIS.cre~ ~override/RJINVJI.cre~
+SAY NAME1 @2
+SAY NAME2 @2
+WRITE_ASCII 0x034 ~RJINI1S~  #8  // small protrait
+WRITE_ASCII 0x248 ~~         #8  // override script
+WRITE_ASCII 0x2cc ~RJINVJI~  #8  // dialogue file
+WRITE_ASCII 0x280 ~RJINVJI~  #32 // death variable - character reference

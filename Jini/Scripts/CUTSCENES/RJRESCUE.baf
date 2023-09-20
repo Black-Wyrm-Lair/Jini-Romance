@@ -1,0 +1,27 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    StorePartyLocations()
+    SetGlobal("RJPort","GLOBAL",1)
+    SetGlobal("RJSelect","GLOBAL",1)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    ActionOverride(Player2,MakeUnselectable(45000))
+    ActionOverride(Player3,MakeUnselectable(45000))
+    ActionOverride(Player4,MakeUnselectable(45000))
+    ActionOverride(Player5,MakeUnselectable(45000))
+    ActionOverride(Player6,MakeUnselectable(45000))
+    LeaveAreaLUA("RJP13G","",[539.729],8)
+    Wait(3)
+    CreateCreature("RJinii1",[660.655],2)
+    CreateCreature("RJIRENI",[553.643],0)
+    Wait(1)
+    FadeFromColor([20.0],0)
+    Wait(1)
+    StartDialogue("RJPLAYER",Player1)
+    EndCutSceneMode()
+END

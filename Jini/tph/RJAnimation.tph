@@ -1,0 +1,12 @@
+
+// This component calls a function to do the animation scut work.
+
+INCLUDE ~%MOD_FOLDER%/tph/RJFunctions.tph~
+
+ACTION_IF 1 BEGIN
+  OUTER_SET rjaniml = 0xea00
+  OUTER_SET rjanimu = 0xefff
+  OUTER_TEXT_SPRINT rjfile ~RJ1TRIAS~
+  OUTER_TEXT_SPRINT rjtitle ~RJ_TRIAS                        ~
+  INCLUDE ~%MOD_FOLDER%/tph/RJSlot.tph~
+END

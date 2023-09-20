@@ -1,0 +1,120 @@
+
+@0    = ~Hello! I'm The Doofus, but you may call me Doofus.~
+@1    = ~What may I do for you?~
+@2    = ~I'm curious. Why are you called Doofus?~
+@3    = ~Doofus, would you send me back to my party, please?~
+@4    = ~You must talk with Jini first before I may send you back.~
+@5    = ~Those are the rules.~
+@6    = ~OK. See you later, Doofus.~
+@7    = ~Off you go, then.~
+@8    = ~I'm <CHARNAME>. May I ask who you are?~
+@9    = ~Doofus, would you send us back, please?~
+
+@10   = ~The Doofus, if you please.~
+@11   = ~Jini's uncle gave me the title when he met me.~
+@12   = ~Said I was the biggest Doofus he had ever met.~
+@13   = ~This puzzled me until he explained that a Doofus is a title somewhere between Duke and Prince.~
+@14   = ~I'm royalty! Or almost. My cousin, Cespenar, is so-o-o-o jealous.~
+@15   = ~He can just go to hell! He-he-he! He can just go to hell.~
+@16   = ~(suppressing a guffaw) I will remember that, Your Highness.~
+@17   = ~Nothing at the moment, thank you. See you later.~
+@18   = ~OK. See you later.~
+@19   = ~I haven't seen you before.~
+
+@20   = ~Hi Doofus. I would like to introduce you to my party members.~
+@21   = ~Oooo! Nice new friends!~
+@22   = ~First, here is <PLAYER2>.~
+@23   = ~Then, there is <PLAYER3>.~
+@24   = ~And over here is <PLAYER4>.~
+@25   = ~Next, there is <PLAYER5>.~
+@26   = ~Finally, there is <PLAYER6>.~
+@27   = ~Pleased to meetcha!~
+@28   = ~Doofus is pleased to meet you all. Come back often!~
+@29   = ~We'll certainly try, Doofus.~
+
+@30   = ~Fay wants to say goodbye. She is leaving with me.~
+@31   = ~Doofus will miss you Fay. You're funny.~
+@32   = ~I'll miss you, too, Doofus. It is time for me to be moving on.~
+@33   = ~Notice the hunk I'm moving on with?~
+@34   = ~Yes, Doofus sees him. He seems nice but not very impressive.~
+@35   = ~We will have to see about that. Later, Doofus.~
+
+@100  = ~Can we talk?~
+@101  = ~What else would you like to know?~
+@102  = ~Nothing at the moment.~
+@103  = ~Could you tell me something about Jini's uncle?~
+@104  = ~Could you tell me something about your cousin, Cespenar?~
+@105  = ~How did you come to be with Jini?~
+@106  = ~How come you aren't in Hell?~
+@107  = ~How do you like working for Jini?~
+@108  = ~Doofus, what the hell is a taco?~
+
+@120  = ~I really shouldn't talk about him, but...~
+@121  = ~He is big and kind and powerful and handsome and smart and he likes Doofus.~
+@122  = ~He gave me my title, you know.~
+@123  = ~Yes, you told me about that.~
+@124  = ~He rarely visits any more.~
+@125  = ~He's a very busy Djinni, you know.~
+@126  = ~I can imagine, what with handing out titles and all.~
+@127  = ~Exactly!~
+@128  = ~He has no legs. Poor fellow.~
+@129  = ~Doofus feels so sorry for him, but he is brave and he never complains.~
+@130  = ~He is my bestest friend.~
+@131  = ~Sounds like a wonderul fellow.~
+
+@140  = ~We don't see each other much any more.~
+@141  = ~He's in hell, you know.~
+@142  = ~He is butler to the Lord of Murder.~
+@143  = ~Jini is much nicer.~
+@144  = ~I can well imagine.~
+@145  = ~We haven't talked for a long time.~
+@146  = ~Mostly, we see each other in nightmares.~
+@147  = ~It's fun but so distracting.~
+@148  = ~All those female imps, you know.~
+@149  = ~(You choke suppressing a guffaw.)~
+@150  = ~He makes stuff from shiny things.~
+@151  = ~His recipes are very dangerous, you know.~
+@152  = ~It is so much fun when they blow up.~
+@153  = ~I'll  take you word for that, Doofus.~
+
+@160  = ~She took me in when I was exiled.~
+@161  = ~She has been very kind to me.~
+@162  = ~Yes, Jini is like that.~
+@163  = ~I was grabbed by some other demons.~
+@164  = ~They would have put me in... Well, it isn't a very nice place, and is very hot and painful.~
+@165  = ~Jini's uncle rescued me and gave me to her.~
+@166  = ~Sounds like things worked out OK in the end.~
+@167  = ~Just lucky, I guess.~
+
+@180  = ~Embarassing, that was.~
+@181  = ~You make one teeny, tiny little mistake, and BOOM!~
+@182  = ~The Big Guys are sooooooooo unforgiving!~
+@183  = ~Well, I'm happy to have you here, Doofus.~
+@184  = ~I eased off on one tortured soul who had the time and bad manners to repent, freeing himself from Hell.~
+@185  = ~It caused an awful amount of paperwork, and I was sentenced to...~
+@186  = ~Never mind. Doofus tries to forget that part.~
+@187  = ~You're here, so it couldn't have been all bad, Doofus.~
+@188  = ~Don't feel like remembering that now.~
+
+@200  = ~Bestest job in the worlds!~
+@201  = ~I got respect, now.~
+@202  = ~And I don't even have to torture anybody!~
+@203  = ~So, it's a good deal...~
+@204  = ~Jini gives me power over her portal.~
+@205  = ~I'm the BOSS!~
+@206  = ~You got to ask me to leave.~
+@207  = ~And so I shall.~
+@208  = ~Jini doesn't hurt Doofus, even when he makes a mistake.~
+@209  = ~I don't like her frowns, so I try to not make mistakes.~
+@210  = ~Good plan, Doofus.~
+
+@220  = ~You don't know?~
+@221  = ~It's something that Jini hates but Doofus loves.~
+@222  = ~Maybe you ahould ask Jini.~
+@223  = ~She doesn't want to talk about it!~
+@224  = ~Well, if you really must know...~
+@225  = ~(Doofus describes the making of a taco.)~
+@226  = ~Sounds good. I wonder why Jini doesn't like them.~
+@227  = ~Doofus would rather not say.~
+@228  = ~They upset Jini, and Doofus loves Jini.~
+@229  = ~OK for now.~

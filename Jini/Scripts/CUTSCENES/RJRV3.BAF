@@ -1,0 +1,12 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("RJ1RAVEL")
+    Polymorph(HAG_NIGHT)
+    FaceObject(Player1)
+    Wait(2)
+    StartDialogue("RJ1RAVEL",Player1)
+    EndCutSceneMode()
+END

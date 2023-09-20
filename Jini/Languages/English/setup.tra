@@ -1,0 +1,326 @@
+@0    = ~Jini Romance Mod (BGEE NPNPC) created by nullset~
+@1    = ~Rjali~
+@2    = ~Jini~
+@3    = ~Gregore~
+
+@4    = ~As a child, Rjali's parents were killed when her village was raided by the Sahuagin, and she was left a starving waif with no one to take care of her. She has been wandering over Faerun ever since looking for something, someone. Aided by a talent for magic and thievery, she has survived by her wits and the aid of infrequent mentors.~
+
+@5    = ~Jini had been a captive of the lamp for uncounted time. How she wound up in Rjali's possession is unknown. Rjali gave the lamp (and Jini) to <CHARNAME> in a fit of adolescent hero worship. Since she had a spare, this was no hardship, and Horace was a more congenial companion, anyway.~
+
+@6    = ~This will only install on BGEE.~
+@7    = ~New Mage/Thief Multiclass Imoen~
+@8    = ~Doofus~
+@9    = ~Hooded Man~
+@10   = ~Maril~
+@11   = ~Ravel~
+@12   = ~Trias~
+@13   = ~Goss~
+@14   = ~Invisible Man~
+@15   = ~Fay~
+
+@40   = ~Fay is a Will-O-The-Wisp who was exiled by her people for being nice to lost travellers. Jini rescued her and kept her safe in the lamp from humans who want to capture her for their own nefarious purposes. She is willing to tag along with <CHARNAME> for his protection and to get out of the lamp.~
+
+@41   = ~Doofus is an imp exiled from hell for a mistake that allowed some damned souls to escape. Jini's uncle Horace gave him his name, and presented him to Jini as a birthday present.~
+
+@54   = ~Basic Talk Timings~
+@55   = ~A Little Faster~
+@56   = ~A Lot Faster~
+@57   = ~Set Talk Timings~
+
+@74   = ~Rjali's Boots~
+@75   = ~Rjali created these boots because she got tired of villains getting away from her. Jini keeps them in inventory in case of need.
+
+STATISTICS:
+
+Equipped abilities:
+– Doubles movement rate
+
+Weight: 4~
+
+
+@76   = ~Rjali's Cloak~
+@77   = ~Rjali created this cloak for times when she didn't feel like wearing armor. Jini keeps them in inventory in case of need.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+
+Charge abilities:
+– Improved Haste once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+– Improved Invisibility once per day
+  Duration: 23 rounds
+  Area of Effect: The user
+
+Weight: 3~
+
+
+@78   = ~Rjali's Long Sword~
+@79   = ~At one time, Rjali got her hands on Varscona's blade and beefed it up. She wanted to take not the least little chance in melee. Jini keeps them in inventory in case of need.
+
+STATISTICS
+
+Equipped abilities:
+
+- Hit Die = 1D10
+– Improved Haste
+- Armor Class +10
+- Magic Resistance = 100
+- Attacks per Round = Max
+- THAC0 = +50
+- Damage Bonus = 1000 Slashing/Piercing/Acid
+- Damage Bonus = 1500 Fire/Magic/Cold
+- Immunity: Fear/Charm/Sleep/Slow/Stun/Fatigue/Paralyze/Confusion/Web/Hold/Level Drain/
+            Feeblemind/Chaos/Imprisonment/Rigid Thinking/Negative Plane/Maze/Energy Drain/
+            Dire Charm/Domination
+
+Weight: 3~
+
+
+@80   = ~Rjali's Book~
+@81   = ~Rjali created this book as a self-improvement project. Jini keeps them in inventory in case of need.
+
+STATISTICS:
+
+Strength: Set to 25 permanently
+Dexterity: Set to 25 permanently
+Constitution: Set to 25 permanently
+Intelligence: Set to 25 permanently
+Wisdom: Set to 25 permanently
+Charisma: Set to 25 permanently
+Current/Max HP: 100
+Base THAC0: Set to 10
+Magic resistance: Set to 125
+Proficiency Longsword: 5
+Proficiency Axe: 5
+Proficiency Sword and Shield: 2
+
+Special: The book is consumed upon use
+Usage: Place into quick item slot
+
+Weight: 25~
+
+@82   = ~Rjali's Axe~
+@83   = ~While Rjali will not say how she got this axe, she is said to have picked a warrior's pocket. Jini keeps them in inventory in case of need.
+
+
+STATISTICS:
+
+Combat abilities: 
+– Returns to the wielder's hand when thrown
+– Hit target must save vs. Death or be knocked down and take 2d6 extra damage
+
+THAC0: +4
+Damage: 1d6+4
+Damage type (melee): slashing
+Damage type (thrown): missile
+Speed Factor: 0
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 1~
+
+@84   = ~Rjali's Chain Mail~
+@85   = ~While Rjali will not say how she got this mail, it is suspected that she swiped it the morning after a liason with an unsuspecting adventurer. Jini keeps them in inventory in case of need.
+
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to normal weapons
+– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -25%
+- Hide in Shadows: -15%
+– Move Silently: -20%
+
+Armor Class: 0 (-2 vs. slashing, 2 vs. crushing)
+Requires:
+ 5 Strength
+
+Weight: 15~
+
+@86   = ~Rjali's Bracers~
+@87   = ~While Rjali will not say how she got these bracers, it is suspected that she swiped it the morning after a liason with an unsuspecting adventurer. Jini keeps them in inventory in case of need.
+
+
+STATISTICS:
+
+Combat abilities:
+– Extra 1/2 attack per round
+
+THAC0: +1
+Damage: +2
+
+Weight: 1~
+
+@88   = ~Rjali's Amulet~
+@89   = ~While Rjali will not say how she got this amulet, it is suspected that she swiped it the morning after a liason with an unsuspecting wizard. Jini keeps them in inventory in case of need.
+
+
+STATISTICS
+
+Equipped abilities:
+– Vocalize
+– Magic Resistance: +5%
+– Immunity to level drain
+– Decrease spellcasting time by 1
+
+Weight: 3~
+
+@94   = ~Rjali's Helm~
+@95   = ~While Rjali will not say how she got this helm, it is suspected that she picked Dorn's pocket (as it were) and, after making a copy, somehow returned it without making him suspicious. This seems ludicrous until you actually hold the helm in your hands. It undeniably exists and has the same powers as Dorn's. Rjali also seems to have changed its appearance from the hideous Visage and to have enchanted it to allow the *good* to use it. Jini keeps them in inventory in case of need.
+
+STATISTICS:
+
+Equipped abilities: 
+– THAC0: +1
+– Saving Throws: +1
+– Immunity to petrification, feeblemind, confusion, fear, and charm
+– Protects against critical hits
+- Grants infravision when worn
+
+Charge abilities:
+– Domination once per day (Save vs. Spell at -2 negates)
+  Duration: 8 rounds
+
+– Breathe Acid once per day
+  Damage: 6d6 acid (Save vs. Breath for half)
+  Target must save vs. Death at -4 or fall unconscious for 2 rounds
+
+Weight: 1~
+
+@96   = ~Rjali's Shield~
+@97   = ~While Rjali will not say how she got this shield, it is suspected she go her hands on Audn's shield and copied it. Jini keeps them in inventory in case of need.
+
+STATISTICS: 
+
+Abilities: Immunity to charm, psionics, confusion, domination, and hold person
+Armor Class Bonus: 4
+Weight: 2
+Miscast Arcane Magic: +5%
+Requires: 4 Strength~
+
+@98   = ~Rjali's Ring~
+@99   = ~While Rjali will not say how she got this ring, it is suspected she go her hands on Gaxx's ring and copied it. Rjali also seems to have enchanted it to allow the *good* to use it. Jini keeps them in inventory in case of need.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+– Magic Resistance: +10%
+– Regenerate 1 Hit Point every 3 seconds
+– Immunity to disease and poison
+
+Charge abilities:
+– Invisibility once per day
+  Duration: 12 hours
+  Area of Effect: The wearer
+
+– Improved Haste three times per day
+  Duration: 10 seconds
+  Area of Effect: The wearer
+
+Weight: 0~
+
+@100  = ~Bag of Holding~
+@101  = ~As with other magical bags, this one appears to be a common cloth sack of about 2 feet by 4 feet in size. The bag of holding opens into a nondimensional space, and its inside is larger than its outside dimensions. Regardless of what is put into this item, the bag always weighs a fixed amount.
+
+STATISTICS:
+
+Weight: 5~
+
+@102  = ~Heal Party~
+@103  = ~Heal Party
+(Necromancy)
+
+Level: 7
+Sphere: Healing 
+Range: Any
+Duration: Permanent
+Casting Time: 0
+Area of Effect: Party
+Saving Throw: None
+
+The very potent Heal spell enables the mage to wipe away disease and injury in every party member. It completely cures all disease and blindness and heals all points of damage suffered due to wounds or injury. It also dispels a Feeblemind spell and cures those mental disorders caused by spells or injury to the brain. Naturally, the effects can be negated by later wounds, injuries, and diseases.~
+
+@112   = ~Rjali's Lamp~
+@113   = ~This lamp summons a djinni who can provide a variety of services. While she befriended Rjali, she is still restive about being confined to the lamp.~
+
+@114   = ~Summon Maril~
+@115   = ~This scroll summons the demon Maril.~
+
+@116   = ~Sword of Trias~
+@117   = ~This is the sword of Trias, who seems to have some trouble hanging on to it.~
+
+@118   = ~MINHP1 version~
+@119   = ~Allow Polymorph~
+
+@200  = ~(You must talk to Jini before leaving.)~
+@201  = ~He-he!~
+@202  = ~There she is again.~
+@203  = ~Who was that girl?~
+@204  = ~Damn! I had better get on with it.~
+@205  = ~Wonder if I will ever know what that was all about.~
+@206  = ~A Deva, a hag, and a demon to come. Are we having fun yet?~
+@207  = ~I wonder what's next? Onward!~
+@208  = ~Time to find the exit and wake up from this nightmare.~
+@209  = ~(Fay smirks at you shamelessly.)~
+@210  = ~(You decide to spend the night with Jini.)~
+
+@250  = ~Everything packed, Fay?~
+@251  = ~What is going on? Turn around and look at me!~
+@252  = ~Fay, something terrible is about to happen. We must escape!~
+@253  = ~And leave <CHARNAME>?~
+@254  = ~You saw that nasty mage. We can do nothing.~
+@255  = ~I've seen him. I don't like it though.~
+@256  = ~We can only hope that <CHARNAME> can find us later.~
+@257  = ~If anyone can, he will. Where are we going?.~
+@258  = ~I don't know what you need with all these undies.~
+@259  = ~Never mind. Come over here near the chair.~
+@260  = ~Just a minute. Doofus, is the door secure?~
+@261  = ~Yes, Jini, but hurry...please.~
+@262  = ~Mistress! They're almost through the final ward!~
+@263  = ~That's it. Let's go.~
+@264  = ~Sigil. I have friends there.~
+@265  = ~OK. Let's do it.~
+
+@400  = ~I am sorry, <CHARNAME>. I am urgently needed by my order and must leave you.~
+
+@730  = ~Yes?~ [FEMALE2G]
+@731  = ~A simple matter..~ [FEMALE2K]
+
+@6000 = ~Met Rjali
+
+Just met a cute little girl visiting Candlekeep with her cleric guardian. She seemed quite taken with me and gave me a lamp as a present. I will have to check it out when I have a little time.~
+
+@6001 = ~Met Jini
+
+Turns out the lamp that girl gave me is inhabitted by a Djinni. A female Djinni named Jini. A *gorgeous* female Djinni named Jini. Seems she can provide me with a variety of services. (DOWN ROVER!) She is also lonely, being a captive in the lamp. Gonna have to do something about that.~
+
+@6002 = ~Jini Spies Out Candlekeep
+
+Jini has checked out the more esoteric volumes in Candlekeep and determined that I am, indeed, a Bhallspawn. Well, that explains a lot of things, but I can't say that I like it much.~
+
+@6003 = ~Jini Investigates
+
+Jini has checked around and, evidently, someone is after my ass. I got a laugh when she suspected that I might be a Bhallspawn. I mean, really?~
+
+@6004 = ~My Mysterious Follower
+
+When I asked Jini about the girl who has been popping up and stealing such a small amount of gold, Jini denied any knowledge of the little thief. I'm not entirely sure I believe her, but it wasn't worth upsetting her by pushing the issue. Maybe time will tell.~
+
+@6005 = ~Dream Doors
+
+Well, that was unpleasant. Just had a dream where a mysterious hooded man had kidnapped Jini to force me to run around on various non-sensical errands. I was able to perform all of the tasks, so I did not have to find out if it was real.~
+
+@6006 = ~Dream Doors Confirmed
+
+Since Jini remembers that dream, too, it was probably more than a dream. I'll have to be extra cautious in case that bastard shows up again.~

@@ -1,0 +1,14 @@
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    IncrementGlobal("RjiniSleepCnt","GLOBAL",1)
+    SetGlobal("RJiniSleep","GLOBAL",0)
+    SetGlobal("RJiniTalk","GLOBAL",0)
+    Wait(1)
+    RestParty()
+    Wait(1)
+    EndCutSceneMode()
+END

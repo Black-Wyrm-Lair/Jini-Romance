@@ -1,0 +1,29 @@
+
+// Add music to Jini areas
+
+MKDIR ~music/rjp204~
+MKDIR ~music/rjp13g~
+MKDIR ~music/rjp610~
+MKDIR ~music/rjp901~
+
+COPY ~Jini/mus~ 		        ~music~
+COPY ~Jini/acm/rjp204a.acm~	        ~music/rjp204~
+COPY ~Jini/acm/rjp13ga.acm~	        ~music/rjp13g~
+COPY ~Jini/acm/rjp610a.acm~	        ~music/rjp610~
+COPY ~Jini/acm/rjp901a.acm~	        ~music/rjp901~
+
+COPY_EXISTING ~songlist.2da~ 		~override~
+SET_2DA_ENTRY 0 2 3 ~blank.mus~
+COPY_EXISTING ~songlist.ids~ 		~override~
+
+ADD_MUSIC  ~RJP204~    ~music/RJP204.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJP204% RJP204~
+
+ADD_MUSIC  ~RJP13G~    ~music/RJP13G.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJP13G% RJP13G~
+
+ADD_MUSIC  ~RJP610~    ~music/RJP610.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJP610% RJP610~
+
+ADD_MUSIC  ~RJP901~    ~music/RJP901.MUS~
+APPEND ~SONGLIST.IDS~ ~%RJP901% RJP901~

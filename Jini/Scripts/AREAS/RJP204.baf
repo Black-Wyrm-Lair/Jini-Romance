@@ -1,0 +1,11 @@
+
+// Init RJP204 - Fortress of Regrets Final (AR1204)
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    CreateCreature("RJ1INV",[588.323],0)
+END

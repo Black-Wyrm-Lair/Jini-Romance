@@ -1,0 +1,21 @@
+
+IF
+ True()
+THEN
+ RESPONSE #100
+    CutSceneID(Player1)
+    StorePartyLocations()
+    SetGlobal("RJPort","GLOBAL",1)
+    SmallWait(3)
+    FadeToColor([30.0],0)
+    Wait(1)
+    LeaveAreaLUA("RJB604","",[798.700],10)
+    Wait(3)
+    CreateCreature("RJini1",[859.647],0)
+    ActionOverride("RJini1",MakeGlobal())
+    SetGlobal("RJiniSpawn","GLOBAL",1)
+    Wait(1)
+    FadeFromColor([20.0],0)
+    Wait(1)
+    EndCutSceneMode()
+END

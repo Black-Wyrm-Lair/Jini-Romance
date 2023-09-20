@@ -1,0 +1,10 @@
+
+// Init RJP901 - Curst Admin Building (3 levels)
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+END

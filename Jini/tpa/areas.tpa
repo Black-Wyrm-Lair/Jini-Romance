@@ -1,0 +1,8 @@
+
+COPY ~Jini/Areas~ ~override~
+
+COPY ~Jini/tis~ ~override~
+
+COMPILE ~Jini/Scripts/AREAS~
+
+EXTEND_TOP ~%rj_area%2600.bcs~ ~Jini/Scripts/AR2600.baf~ EVALUATE_BUFFER

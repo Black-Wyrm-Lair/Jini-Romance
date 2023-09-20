@@ -1,0 +1,25 @@
+
+// Flag start of SoD
+
+IF
+  G("RJSoD",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJSoD","GLOBAL",1)
+    Continue()
+END
+
+// Get rid of Isra
+
+IF
+  GGT("bd_plot",2)
+  InParty("rh#isra")
+THEN
+  RESPONSE #100
+    DisplayStringHead("rh#isra",@400)
+    ActionOverride("rh#isra",DestroyAllEquipment())
+    ActionOverride("rh#isra",SetDialogue(""))
+    Wait(3)
+    ActionOverride("rh#isra",LeaveParty())
+    ActionOverride("rh#isra",EscapeArea())
+END

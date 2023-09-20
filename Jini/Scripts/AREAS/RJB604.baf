@@ -1,0 +1,19 @@
+
+// Init RJB604 - Jini's Lamp Entrance
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    Explore()
+    Continue()
+END
+
+IF
+  G("RJB604",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RJB604","GLOBAL",1)
+    ActionOverride("RJ1Doofs",MakeGlobal())
+END
